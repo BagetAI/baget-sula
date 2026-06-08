@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sula — Brand Identity System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-primary: #1C1C1C;
+      --brand-secondary: #D4CFC9;
+      --brand-accent: #8F9779;
+      --brand-background: #F9F8F6;
+      --brand-surface: #FFFFFF;
+      --brand-text: #1C1C1C;
+      --brand-text-muted: #6B6A67;
+      
+      --brand-font-primary: 'Cormorant Garamond', serif;
+      --brand-font-secondary: 'Inter', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--brand-background);
+      color: var(--brand-text);
+      font-family: var(--brand-font-secondary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    header {
+      padding: 3rem 2rem;
+      border-bottom: 1px solid var(--brand-secondary);
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand-name {
+      font-family: var(--brand-font-primary);
+      font-size: 2.5rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .badge {
+      font-family: var(--brand-font-secondary);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      border: 1px solid var(--brand-primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: 2px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
+    section {
+      margin-bottom: 6rem;
+    }
+
+    h2 {
+      font-family: var(--brand-font-primary);
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--brand-secondary);
+      padding-bottom: 0.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .logo-container {
+      background-color: var(--brand-surface);
+      border: 1px solid var(--brand-secondary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem;
+    }
+
+    .logo-container img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .brand-philosophy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .brand-philosophy p {
+      font-size: 1.1rem;
+      color: var(--brand-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .color-card {
+      background-color: var(--brand-surface);
+      border: 1px solid var(--brand-secondary);
+      padding: 1rem;
+    }
+
+    .color-swatch {
+      height: 120px;
+      margin-bottom: 1rem;
+    }
+
+    .color-details h4 {
+      font-family: var(--brand-font-primary);
+      font-size: 1.25rem;
+      font-weight: 400;
+      margin-bottom: 0.25rem;
+    }
+
+    .color-details p {
+      font-size: 0.8rem;
+      color: var(--brand-text-muted);
+    }
+
+    .typography-display {
+      background-color: var(--brand-surface);
+      border: 1px solid var(--brand-secondary);
+      padding: 3rem;
+    }
+
+    .typo-row {
+      margin-bottom: 3rem;
+    }
+
+    .typo-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .font-sample-serif {
+      font-family: var(--brand-font-primary);
+      font-size: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .font-sample-sans {
+      font-family: var(--brand-font-secondary);
+      font-size: 1.5rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-showcase-img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--brand-secondary);
+    }
+
+    .specs-list {
+      list-style-type: none;
+    }
+
+    .specs-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--brand-secondary);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+    }
+
+    .specs-list li span:first-child {
+      font-weight: 600;
+      color: var(--brand-text-muted);
+    }
+
+    footer {
+      background-color: var(--brand-primary);
+      color: var(--brand-background);
+      padding: 4rem 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand-name">Sula</div>
+    <div class="badge">Brand System v1.0</div>
+  </header>
+
+  <main>
+    <section>
+      <h2>Visual Architecture</h2>
+      <div class="grid-2">
+        <div class="logo-container">
+          <img src="images/minimalist-typographic-logo-design-for-l.png" alt="Sula Minimalist Typographic Logo">
+        </div>
+        <div class="brand-philosophy">
+          <p>Sula lives at the luxury intersection of rigorous material safety and high-end modern design.</p>
+          <p>Our typographic logotype balances delicate, razor-thin serifs with strong, geometric proportions. This architecture speaks to both the artisanal, clean nature of organic candle-making and the sharp discipline of architectural minimalism.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Earthy Premium Palette</h2>
+      <div class="palette-grid">
+        <div class="color-card">
+          <div class="color-swatch" style="background-color: #1C1C1C;"></div>
+          <div class="color-details">
+            <h4>Deep Charcoal</h4>
+            <p>#1C1C1C</p>
+            <p>Primary typography & heavy contrast accents.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background-color: #D4CFC9;"></div>
+          <div class="color-details">
+            <h4>Warm Gray / Cream</h4>
+            <p>#D4CFC9</p>
+            <p>Secondary brand surfaces & textured ceramics.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background-color: #8F9779;"></div>
+          <div class="color-details">
+            <h4>Soft Sage Green</h4>
+            <p>#8F9779</p>
+            <p>Brand accent color, botanical connection.</p>
+          </div>
+        </div>
+        <div class="color-card">
+          <div class="color-swatch" style="background-color: #F9F8F6;"></div>
+          <div class="color-details">
+            <h4>Off-White Linen</h4>
+            <p>#F9F8F6</p>
+            <p>Primary canvas and tactile packaging grounds.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Typography Hierarchy</h2>
+      <div class="typography-display">
+        <div class="typo-row">
+          <div class="badge" style="margin-bottom: 1rem; display: inline-block;">Primary — Editorial Serif</div>
+          <div class="font-sample-serif">Cormorant Garamond</div>
+          <p style="color: var(--brand-text-muted)">Used for wordmarks, packaging headings, and editorial storytelling.</p>
+        </div>
+        <div class="typo-row">
+          <div class="badge" style="margin-bottom: 1rem; display: inline-block;">Secondary — Functional Sans</div>
+          <div class="font-sample-sans">Inter</div>
+          <p style="color: var(--brand-text-muted)">Used for technical safety details, body copy, and digital product specifications.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Product & Packaging Integration</h2>
+      <div class="grid-2">
+        <div>
+          <img src="images/editorial-product-photography-of-sula-su.png" alt="Sula Candle and Premium Cardboard Box Mockup" class="product-showcase-img">
+        </div>
+        <div>
+          <ul class="specs-list">
+            <li>
+              <span>Vessel Material</span>
+              <span>Sculptured Matte Cream Stoneware (Dehua)</span>
+            </li>
+            <li>
+              <span>Packaging Construction</span>
+              <span>100% FSC-certified PCR Cardboard</span>
+            </li>
+            <li>
+              <span>Wick Technology</span>
+              <span>FSC-certified Licensed Wooden Wick</span>
+            </li>
+            <li>
+              <span>Required Patent Notice</span>
+              <span>Pat. www.lumetique.com/patents</span>
+            </li>
+            <li>
+              <span>Wax Blend</span>
+              <span>100% Domestic U.S. Soy (Golden Wax 464)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sula Luxury Candle Co. All rights reserved. &copy; 2026.</p>
+  </footer>
+
+</body>
+</html>
